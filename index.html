@@ -5,12 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAES COMMERCE - Panel Principal</title>
     <!-- Enlace opcional para iconos (como Font Awesome) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="all.min.css">
     <link rel="stylesheet" href="style.css">
     
-    <link rel="stylesheet" href="all.min.css">
 
 </head>
 <body>
@@ -20,7 +17,9 @@
         <!-- BARRA LATERAL (SIDEBAR) -->
         <aside class="sidebar">
             <div class="brand">
-                <div class="brand-logo"></div>
+                <div class="brand-logo">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
                 <h2>SAES COMMERCE</h2>
             </div>
             <nav class="sidebar-menu">
@@ -92,7 +91,7 @@
                     <h3>Pedidos por estado</h3>
                     <div class="chart-placeholder">
                         <!-- Aquí integrarías una librería de gráficos como Chart.js -->
-                        <div class="mock-chart">[Gráfico de líneas]</div>
+                        <canvas id="graficoPedidos"></canvas>
                         <ul class="chart-legend">
                             <li><span class="dot pending"></span> Pendientes 32%</li>
                             <li><span class="dot processing"></span> En proceso 28%</li>
@@ -163,6 +162,9 @@
 
         </main>
     </div>
+
+    <script src="chart-lib.js"></script>
+    <script src="chart.js"></script>
 
 </body>
 </html>

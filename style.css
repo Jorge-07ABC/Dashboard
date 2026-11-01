@@ -50,11 +50,15 @@ body {
 }
 
 .brand-logo {
-    width: 30px;
-    height: 30px;
-    background-color: var(--white);
+    width: 40px;
+    height: 40px;
     border-radius: 6px;
-    margin-right: 12px;
+    margin-right: 20px;
+    background: #007bff;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .brand h2 {
@@ -241,6 +245,8 @@ body {
     align-items: center;
     justify-content: space-around;
     min-height: 150px;
+    height: 200px;
+    width: 100%;
 }
 
 .mock-chart {
