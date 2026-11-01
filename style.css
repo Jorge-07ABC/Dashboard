@@ -1,0 +1,373 @@
+:root {
+    --bg-main: #f4f6f9;
+    --bg-sidebar: #0d1e3d;
+    --sidebar-active: #007bff;
+    --text-dark: #333333;
+    --text-muted: #666666;
+    --white: #ffffff;
+    
+    /* Colores de los estados */
+    --color-pending: #ffc107;
+    --color-processing: #17a2b8;
+    --color-shipped: #28a745;
+    --color-cancelled: #dc3545;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   2. BARRA LATERAL (SIDEBAR)
+   ========================================================================== */
+.sidebar {
+    width: 260px;
+    background-color: var(--bg-sidebar);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    padding: 0 20px 20px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand-logo {
+    width: 30px;
+    height: 30px;
+    background-color: var(--white);
+    border-radius: 6px;
+    margin-right: 12px;
+}
+
+.brand h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-menu {
+    margin-top: 20px;
+    flex-grow: 1;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+}
+
+.sidebar-menu li {
+    margin: 4px 15px;
+}
+
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: #b8c7ce;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.sidebar-menu li a i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--white);
+}
+
+.sidebar-menu li.active a {
+    background-color: var(--sidebar-active);
+    color: var(--white);
+    font-weight: bold;
+}
+
+.sidebar-menu li.logout {
+    margin-top: 40px;
+}
+
+/* ==========================================================================
+   3. CONTENIDO PRINCIPAL Y ENCABEZADO
+   ========================================================================== */
+.main-content {
+    flex-grow: 1;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-left h1 {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+}
+
+.toggle-menu {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.notifications {
+    position: relative;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.notifications .badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-cancelled);
+    border-radius: 50%;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.user-profile span {
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   4. TARJETAS METRICAS (KPIs)
+   ========================================================================== */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.metric-card {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.metric-card i {
+    font-size: 1.5rem;
+    color: var(--sidebar-active);
+    margin-bottom: 10px;
+}
+
+.metric-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #111;
+}
+
+.metric-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* ==========================================================================
+   5. GRÁFICOS Y PEDIDOS RECIENTES
+   ========================================================================== */
+.charts-and-orders {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.content-card {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.content-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+/* Simulación del gráfico y leyenda */
+.chart-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 150px;
+}
+
+.mock-chart {
+    font-size: 3rem;
+    color: var(--sidebar-active);
+}
+
+.chart-legend {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* Lista de pedidos recientes */
+.recent-orders-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.recent-orders-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.recent-orders-list li:last-child {
+    border-bottom: none;
+}
+
+.order-info {
+    color: var(--text-dark);
+}
+
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--white);
+}
+
+/* Clases dinámicas de estados */
+.pending { background-color: var(--color-pending); color: #000; }
+.processing { background-color: var(--color-processing); }
+.shipped { background-color: var(--color-shipped); }
+.cancelled { background-color: var(--color-cancelled); }
+
+/* ==========================================================================
+   6. SECCIÓN RESUMEN GENERAL (INFERIOR)
+   ========================================================================== */
+.summary-section {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.summary-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.summary-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.summary-number {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.summary-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.summary-icon.orange { background-color: #fd7e14; }
+.summary-icon.blue { background-color: #007bff; }
+.summary-icon.green { background-color: #28a745; }
+.summary-icon.red { background-color: #dc3545; }
+
+.summary-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.view-details {
+    font-size: 0.85rem;
+    color: var(--sidebar-active);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.view-details:hover {
+    text-decoration: underline;
+}

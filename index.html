@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAES COMMERCE - Panel Principal</title>
+    <!-- Enlace opcional para iconos (como Font Awesome) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="all.min.css">
+
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <!-- BARRA LATERAL (SIDEBAR) -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-logo"></div>
+                <h2>SAES COMMERCE</h2>
+            </div>
+            <nav class="sidebar-menu">
+                <ul>
+                    <li class="active"><a href="#"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                    <li><a href="#"><i class="fa-solid fa-users"></i> Usuarios</a></li>
+                    <li><a href="#"><i class="fa-solid fa-user-tie"></i> Clientes</a></li>
+                    <li><a href="#"><i class="fa-solid fa-box"></i> Productos</a></li>
+                    <li><a href="#"><i class="fa-solid fa-boxes-stacked"></i> Inventario</a></li>
+                    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i> Pedidos</a></li>
+                    <li><a href="#"><i class="fa-solid fa-chart-line"></i> Reportes</a></li>
+                    <li><a href="#"><i class="fa-solid fa-gear"></i> Configuración</a></li>
+                    <li class="logout"><a href="#"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content">
+            
+            <!-- ENCABEZADO SUPERIOR -->
+            <header class="main-header">
+                <div class="header-left">
+                    <i class="fa-solid fa-bars toggle-menu"></i>
+                    <h1>Panel principal</h1>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="badge"></span>
+                    </div>
+                    <div class="user-profile">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span>Administrador</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- SECCIÓN DE TARJETAS METRICAS (KPIs) -->
+            <section class="metrics-grid">
+                <div class="metric-card">
+                    <i class="fa-solid fa-cart-shopping icon-blue"></i>
+                    <div class="metric-value">125</div>
+                    <div class="metric-label">Total pedidos</div>
+                </div>
+                <div class="metric-card">
+                    <i class="fa-solid fa-users icon-blue"></i>
+                    <div class="metric-value">58</div>
+                    <div class="metric-label">Total clientes</div>
+                </div>
+                <div class="metric-card">
+                    <i class="fa-solid fa-box icon-blue"></i>
+                    <div class="metric-value">320</div>
+                    <div class="metric-label">Productos registrados</div>
+                </div>
+                <div class="metric-card">
+                    <i class="fa-solid fa-database icon-blue"></i>
+                    <div class="metric-value">1.250</div>
+                    <div class="metric-label">Inventario disponible</div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN DE GRÁFICOS Y PEDIDOS RECIENTES -->
+            <section class="charts-and-orders">
+                
+                <!-- Pedidos por estado -->
+                <div class="content-card">
+                    <h3>Pedidos por estado</h3>
+                    <div class="chart-placeholder">
+                        <!-- Aquí integrarías una librería de gráficos como Chart.js -->
+                        <div class="mock-chart">[Gráfico de líneas]</div>
+                        <ul class="chart-legend">
+                            <li><span class="dot pending"></span> Pendientes 32%</li>
+                            <li><span class="dot processing"></span> En proceso 28%</li>
+                            <li><span class="dot shipped"></span> Despachados 30%</li>
+                            <li><span class="dot cancelled"></span> Cancelados 10%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pedidos recientes -->
+                <div class="content-card">
+                    <h3>Pedidos recientes</h3>
+                    <ul class="recent-orders-list">
+                        <li>
+                            <span class="order-info">PED-000125 24/05/2024 Cliente A</span>
+                            <span class="status-badge pending">Pendiente</span>
+                        </li>
+                        <li>
+                            <span class="order-info">PED-000124 24/05/2024 Cliente B</span>
+                            <span class="status-badge processing">En proceso</span>
+                        </li>
+                        <li>
+                            <span class="order-info">PED-000123 23/05/2024 Cliente C</span>
+                            <span class="status-badge shipped">Despachado</span>
+                        </li>
+                        <li>
+                            <span class="order-info">PED-000122 22/05/2024 Cliente D</span>
+                            <span class="status-badge pending">Pendiente</span>
+                        </li>
+                        <li>
+                            <span class="order-info">PED-000121 21/05/2024 Cliente E</span>
+                            <span class="status-badge cancelled">Cancelado</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- RESUMEN GENERAL -->
+            <section class="summary-section">
+                <h3>Resumen general</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <span class="summary-number">32</span>
+                        <div class="summary-icon orange"><i class="fa-solid fa-briefcase"></i></div>
+                        <span class="summary-label">Pedidos pendientes</span>
+                        <a href="#" class="view-details">Ver detalles</a>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-number">18</span>
+                        <div class="summary-icon blue"><i class="fa-solid fa-truck"></i></div>
+                        <span class="summary-label">Pedidos en proceso</span>
+                        <a href="#" class="view-details">Ver detalles</a>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-number">42</span>
+                        <div class="summary-icon green"><i class="fa-solid fa-circle-check"></i></div>
+                        <span class="summary-label">Pedidos despachados</span>
+                        <a href="#" class="view-details">Ver detalles</a>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-number">5</span>
+                        <div class="summary-icon red"><i class="fa-solid fa-circle-xmark"></i></div>
+                        <span class="summary-label">Pedidos cancelados</span>
+                        <a href="#" class="view-details">Ver detalles</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
